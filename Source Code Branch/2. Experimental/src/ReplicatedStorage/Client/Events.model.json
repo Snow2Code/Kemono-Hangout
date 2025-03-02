@@ -1,0 +1,185 @@
+{
+    "ClassName": "Folder",
+    "Children": [
+        {
+            "ClassName": "RemoteEvent",
+            "properties": {
+                "Name": "ServerWarn"
+            }
+        },
+        {
+            "ClassName": "RemoteEvent",
+            "properties": {
+                "Name": "ServerLog"
+            }
+        },
+        {
+            "ClassName": "RemoteEvent",
+            "properties": {
+                "Name": "Notify"
+            }
+        },
+        {
+            "ClassName": "RemoteEvent",
+            "properties": {
+                "Name": "Message"
+            }
+        },
+        {
+            "ClassName": "RemoteFunction",
+            "properties": {
+                "Name": "ClientTween"
+            }
+        },
+        {
+            "ClassName": "RemoteFunction",
+            "properties": {
+                "Name": "BubbleChat"
+            }
+        },
+        {
+            "ClassName": "Folder",
+            "properties": {
+                "Name": "UI"
+            },
+            "Children": [
+                {
+                    "ClassName": "RemoteEvent",
+                    "properties": {
+                        "Name": "Rules"
+                    }
+                }
+            ]
+        },
+        {
+            "ClassName": "Folder",
+            "properties": {
+                "Name": "PlayerList"
+            },
+            "Children": [
+                {
+                    "ClassName": "RemoteFunction",
+                    "properties": {
+                        "Name": "CheckVerify"
+                    }
+                },
+                {
+                    "ClassName": "RemoteFunction",
+                    "properties": {
+                        "Name": "CheckPremium"
+                    }
+                }
+            ]
+        },
+
+        
+        {
+            "ClassName": "Folder",
+            "properties": {
+                "Name": "Player"
+            },
+            "Children": [
+                {
+                    "ClassName": "RemoteFunction",
+                    "properties": {
+                        "Name": "HasCommands"
+                    }
+                },
+                {
+                    "ClassName": "RemoteFunction",
+                    "properties": {
+                        "Name": "HasVIF"
+                    }
+                },
+                {
+                    "ClassName": "RemoteFunction",
+                    "properties": {
+                        "Name": "UpdateSetting"
+                    }
+                }
+            ]
+        },
+        {
+            "ClassName": "Folder",
+            "properties": {
+                "Name": "Misc"
+            },
+            "Children": [
+                {
+                    "ClassName": "RemoteFunction",
+                    "properties": {
+                        "Name": "GetDate"
+                    }
+                }
+            ]
+        },
+        {
+            "ClassName": "Folder",
+            "properties": {
+                "Name": "Commands"
+            },
+            "Children": [
+                {
+                    "ClassName": "RemoteEvent",
+                    "properties": {
+                        "Name": "OpenUI"
+                    }
+                },
+                {
+                    "ClassName": "RemoteEvent",
+                    "properties": {
+                        "Name": "UpdateCommands"
+                    }
+                }
+            ]
+        },
+
+        {
+            "ClassName": "Folder",
+            "properties": {
+                "Name": "Codes"
+            },
+            "Children": [
+                {
+                    "ClassName": "RemoteFunction",
+                    "properties": {
+                        "Name": "CheckCode"
+                    }
+                },
+                {
+                    "ClassName": "RemoteEvent",
+                    "properties": {
+                        "Name": "Redeem"
+                    }
+                }
+            ]
+        },
+        {
+            "ClassName": "Folder",
+            "properties": {
+                "Name": "Chat"
+            },
+            "Children": [
+                {
+                    "ClassName": "RemoteFunction",
+                    "properties": {
+                        "Name": "GetMessageColor"
+                    }
+                },
+                {
+                    "ClassName": "RemoteFunction",
+                    "properties": {
+                        "Name": "GetTeam"
+                    }
+                }
+            ]
+        },
+
+        {
+            "ClassName": "RemoteEvent",
+            "properties": {
+                "Name": "Rojo Child Add Test"
+            }
+        }
+    ]
+}

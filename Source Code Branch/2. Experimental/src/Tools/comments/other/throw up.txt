@@ -1,0 +1,2 @@
+Exception up = new Exception("Something is really wrong.");
+throw up;  //ha ha

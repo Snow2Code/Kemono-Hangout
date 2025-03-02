@@ -1,0 +1,11 @@
+# Project place file
+/*.rbxlx
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+
+# Ignore Refernces. Ask me to send you the refernces.
+/! Ref/*
+/%PRIVATE%/

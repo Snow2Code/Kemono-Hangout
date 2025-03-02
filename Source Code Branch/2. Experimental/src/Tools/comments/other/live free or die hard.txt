@@ -1,0 +1,1 @@
+$you = live('free') or die('hard')

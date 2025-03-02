@@ -1,0 +1,307 @@
+
+Source Code Comments:
+
+Games:
+TF2:
+
+"
+ this is the easiest way I could find to ...
+
+ todo this is dumb
+"
+
+" NOTE: This isn't particularly efficient. Too bad!"
+" This is a stupid fix, but I don't have time to do a cleaner implementation."
+" This is a bad way to implement ..., but it will work for now."
+" This seems like a bad idea but it's fine for now"
+" This is terrible, but UI has forced my hand."
+" FIXME: This doesn't account for children of hierarchy... too bad!"
+" ... inherited from earlier code, WTF?"
+" Multithreading badness. This will cause a crash later!"
+" This code didn't port easily. WTF does it do? (sjb)"
+
+"
+ I don't know why, I don't want to know why, I shouldn't
+ have to wonder why, but for whatever reason this stupid ... isn't working out correctly unless we do this terribleness
+"
+
+" use an EPSILON damnit!!"
+
+"
+ This is catastrophically bad, don't do this.
+ Someone needs to fix this.
+"
+
+" Yes, this (probably) causes a memory leak. Too bad!"
+" ... says: this is bad, dumb code, importantly it's bad dumb code that doesn't make any sense here."
+" My hope is that this code is so awful I'm never allowed to write UI code again."
+" !!! THIS DOESN'T WORK!! WHY? HAS I EVER?"
+" This is some lame crap right here."
+" This is utterly garabge."
+
+"
+ Aaaannnnnnnnddddd ... has no return code.
+ Because nobody could *ever* possible attempt to parse bad data.
+ It could never possibly happen.
+"
+
+"
+ FIXME: This is a terrible way of doing this!
+ (reason and better way)
+"
+
+Xbox:
+
+" IDIOTS!  WHY WASN'T THIS DEFINED TO BE SAME AS ...?"
+" TODO - REWRTIE THIS THING"
+" miscellaneous sanity checks (are these legit or should we just quietly tolerate such crap?)"
+" Just a dumb implementation for now."
+" for god damn ..., I don't have time to remove them here"
+" TERRIBLE HORRIBLE NO GOOD VERY BAD HACK"
+" REVIEW: This crap should be in ..."
+" God help us if anyone changes ... in ..."
+" hopeless..."
+" THIS IS HORRIBLE DESIGN!!!!!!! only a quick hack because all the tests reference this structure."
+" It's invalid for someone to pass an empty pidl, but some do."
+" For now (this is crap)"
+" some crap has happened..."
+
+"
+ Why the hell isn't this getting picked up?
+ We need to consolidate our utils.
+"
+
+" TODO: Remedy this; it's crappy design!!!"
+" Global optimizer will kill this poor old code"
+" Necessary becaues ... is dumb."
+
+"
+ No way on God's green earth we should need ...
+ (some code)
+ *sigh* we need more than ...
+"
+
+" not particularly secure, but oh well."
+
+" can fail when (invoked/whatever) from (...). Oh well, cry me a river."
+" this won't fool (Snowy/whoever) when (it/whatever) gets smarter, oh well..."
+" This is a stupid hack to make up for regression issues... Sign..."
+
+"
+ FUTURE: remove all of this crap
+ altogether...
+"
+
+" why bother even trying?" (was "bother even trying?" but changed)
+
+Linux:
+
+" This is terrible and needs to be nuked"
+" I have no idea why this code works... and I'm the one who wrote it."
+" I hate this code so much. Must kill it"
+" I haven't seen anything this ugly since.. maple."
+" kill me."
+
+
+The Simpsons Hit & Run:
+
+" this is bulky, but screw it, gotta get this working like yesterday"
+" please God let this be the last hack in this game..."
+" TODO: What the hell is casuing this?"
+" pain in the ass - just get it to work"
+"
+ not sure if I should keep this method around, because (...)
+ 
+ but the method name is so cool....
+"
+
+" this sucks but i just want to finish it."
+" value... fresh from my ass"
+
+CSGO:
+
+" yes, this is stupid"
+" Not really ideal, but it'll work for now"
+
+GTA V:
+
+" This has got to be some of the lamest in the entire game"
+" I won't even begin to claim that I know what the hell is going on here."
+(use this however: "goober!". is in same file as "double work")
+" double work but at the moment i don't give a damn"
+" this is pretty messed up .. seriously this is some convoluted crap."
+" this is ugly as hell but i dont care."
+" This is voodoo, and sucks. I'm open for suggestions for a better approach."
+
+Windows:
+
+"
+ it is not death, but dying, which is terrible
+   - Henry Fielding (1707-54)
+"
+
+" FIXME: this is a mess."
+" This is freaky, but seems to work.
+" FIXME or do we care ??? (name), (month) (year)"
+" Freaky"
+" Cocked, Locked, and ready to Rock"
+" Wrote it.   It looks crazy, but I claim there's a theory behind it."
+" Some ugly crap goin' on here!"
+
+Twitch:
+" FIXME: not guaranteed unique, but good enough for now"
+
+Yandex:
+"
+ Sorry for this dummy, stupid code
+ I promise that i come back and refactor it
+ Thank u for your understanding
+"
+
+" NOTE: yes, the above is an abomination"
+" FIXME: magic code here, do not touch, please"
+" I'll be happy to do it better. But now i don't understand how."
+" TODO: why dev? why not stable?"
+" Haha, good luck searching bugs caused by this"
+" I don't want to explain this code because I hate it."
+
+BeamNG:
+" TODO: don't do this?"
+
+"
+ should be fixed, but let's cover this up until then.
+ NOTE: This is really REALLY bad.
+"
+
+" TODO ???"
+" error checking because we can't trust people we work with"
+" TODO: This is such a bad approach."
+" TODO: Rewrite this, this is a horrible mess"
+" fixes things, still horrible ..."
+" Horrible redo as soon finished and working"
+
+Razzbow (Datamine KW attempt):
+" I want to strangle someone."
+
+
+
+
+
+
+
+
+
+Other:
+"
+ When I wrote this. Only god and I understood what was going on.
+ Now... Only god knows. 
+"
+
+" I am not sure if we need this... But too scared to remove."
+
+"
+ No comments for you!
+ It was hard to write, so it should be hard to read!
+"
+
+"
+ somedev1 - d/m/y Adding temporary ...
+ somedev2 - d/m/y Temporary my ass.
+"
+
+" I'm sorry."
+
+"
+ This code sucks, you know it and I know it.
+ Move on and call me an idiot later.
+"
+
+" TODO: Fix this.   Fix what?"
+
+"
+ Dear future me.
+ Please forgive me.
+ I can't even begin to express how sorry I am.
+"
+
+" God forgive me for what I'm about to do" (from Cursed Programming)
+" So sue me"
+" stop() // Hammertime!"
+" drunk, fix later"
+" who cares?"
+
+"
+ Basically, without saying too much, you're screwed. Royally and totally.
+
+ (some code)
+
+ If you thought you were screwed before, boy have I got news for you!!!
+"
+
+" (NOTE: this kinda has some code in it)
+ Repeat
+  ...
+ Until (JesusChristReturns) ' Not sure
+"
+
+"$you = live('free') or die('hard')"
+" Remove this if you wanna be fired"
+
+"
+/**
+* For the brave souls who get this far: You are the chosen ones,
+* the valiant knights of programming who toil away, without rest,
+* fixing our most awful code. To you, true saviors, kings of men,
+* I say this: never gonna give you up, never gonna let you down,
+* never gonna run around and desert you. Never gonna make you cry,
+* never gonna say goodbye. Never gonna tell a lie and hurt you.
+*/
+"
+
+"
+// 
+// Dear maintainer:
+// 
+// Once you are done trying to 'optimize' this routine,
+// and have realized what a terrible mistake that was,
+// please increment the following counter as a warning
+// to the next guy:
+// 
+// total_hours_wasted_here = 42
+// 
+"
+
+"
+Exception up = new Exception("Something is really wrong.");
+throw up;  //ha ha
+"
+
+"// sometimes I believe ... ignores all my comments"
+"// Magic. Do not touch."
+"
+    #define TRUE FALSE
+    //Happy debugging suckers
+"
+
+"
+/*
+ * You may think you know what the following code does.
+ * But you dont. Trust me.
+ * Fiddle with it, and youll spend many a sleepless
+ * night cursing the moment you thought youd be clever
+ * enough to "optimize" the code below.
+ * Now close this file and go play with something else.
+ */ 
+"
+
+
+
+From songs in my playlist:
+" My voice can be heard but there's no way to speak."
+
+
+My own:
+
+" You forget a thousand things every day. How 'bout you make sure this is one of 'em."
+" This code is messy and frisky~"
+" It's probably fine."

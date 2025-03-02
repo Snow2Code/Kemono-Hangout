@@ -1,0 +1,1 @@
+ Yes, this (probably) causes a memory leak. Too bad!

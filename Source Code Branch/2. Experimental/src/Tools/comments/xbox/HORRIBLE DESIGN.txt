@@ -1,0 +1,1 @@
+ THIS IS HORRIBLE DESIGN!!!!!!! only a quick hack because all the tests reference this structure.
