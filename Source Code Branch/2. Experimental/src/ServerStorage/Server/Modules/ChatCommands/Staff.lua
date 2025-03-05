@@ -71,105 +71,7 @@ commands.hat = {
 }
 ]]
 
-commands.give =  {
-	Name = "give";
-	Aliases	= {"tool"};
-	Tags = {"items"},
-	Description = "";
-	Contributors = {"Snowy"};
-	Function = function(commandUser:Player, arguments)
-		local success, e = pcall(function()
-			local player = Engine.FindPlayer(arguments[1])
-
-			if player then
-				table.remove(arguments, 1)
-				local item = table.concat(arguments, " ")
-				if item then
-					local character = player.Character
-					local humanoid = character:FindFirstChild("Humanoid")
-					local sub = "Normal"
-
-					if string.match(item, "golden ") then
-						sub = "Golden"
-					end
-
-					-- Return chat message for invalid item
-					for _, Descendant in ipairs(Items:GetDescendants()) do
-						if string.lower(Descendant.Name) == item then
-						else
-							Engine2.Message(commandUser, `Commands`, `{item} isn't a item in the game. Check it and try again.`)
-							return	
-						end
-					end
-					
-					for _, _item in ipairs(Items[sub]:GetDescendants()) do
-						if sub == "Golden" then
-							local _itemName = _item.Name
-							_itemName = string.gsub(_itemName, "Golden ", "")
-							if string.lower(_itemName) == item and _item:IsA("Tool") then
-								if _item:GetAttribute("type") == "Melee Weapon" then
-									if humanoid.RigType == Enum.HumanoidRigType.R15 and _item:GetAttribute("rigTypeRequired") == "R6" then
-										Events.Notify:FireClient(commandUser, `{_item.Name} requires the Rig Type R6, go to R6 and try again.`, Color3.fromRGB(255, 83, 83))
-										return
-									end
-								end
-								local ClonedItem = _item:Clone()
-								ClonedItem.Parent = player.Backpack
-								return
-							end
-						end
-						if string.lower(_item.Name) == item and _item:IsA("Tool") then
-							if _item:GetAttribute("type") == "Melee Weapon" then
-								if humanoid.RigType == Enum.HumanoidRigType.R15 and _item:GetAttribute("rigTypeRequired") == "R6" then
-									Events.Notify:FireClient(commandUser, `{_item.Name} requires the Rig Type R6, go to R6 and try again.`, Color3.fromRGB(255, 83, 83))
-									return
-								end
-							end
-							local ClonedItem = _item:Clone()
-							ClonedItem.Parent = player.Backpack
-							return
-						end
-					end
-
-					for _, _item in ipairs(Items:GetDescendants()) do
-						if string.lower(_item.Name) == item and _item:IsA("Tool") then
-							if _item:GetAttribute("IsPurchasableItem") == true then
-								Engine2.Message(commandUser, `Commands`, `You cannot be given the item {_item.Name}, because it's a Purchasable Item.`)
-								return
-							else
-								for _, _SPECITEM_ in ipairs(SpecialItems:GetChildren()) do
-									if _SPECITEM_.Name == _item.Name then
-										if not Engine.IsSpecial(commandUser) then
-											Engine2.Message(commandUser, `Commands`, `You cannot give the item {_item.Name} because it's a special, developer or testing item.`)
-											return
-										end
-									end
-									local ClonedItem = _item:Clone()
-									ClonedItem.Parent = player.Backpack
-									return
-								end
-							end
-						end
-					end
-				end
-			else
-				if arguments[1] then --player == nil
-					print(arguments[1])
-					if player == nil then
-						Engine2.Message(commandUser, `Commands`, `Couldn't find that player. Check it and try again.`)
-					end	
-				else
-					Engine2.Message(commandUser, `Commands`, `Usage - [player] ~item~`)
-				end
-			end
-		end)
-		
-		if not success then
-			Engine2.Message(commandUser, `Commands`, `Failed to execute command. Info: {e}`)
-			Engine.LogToServer(`Failed to execute command 'give'. Info: {e}`)
-		end
-	end
-}
+-- move command was here but moved to bottom!
 
 commands.alarms = {
     Name = "alarms";
@@ -194,7 +96,12 @@ commands.alarms = {
                     local Rotate = TweenService:Create(Primary, _TweenInfo.Alarm, rotationGoal)
                     Rotate:Play()
                     Rotate.Completed:Wait()
-                    AlarmRotate(Primary, speed)
+					AlarmRotate(Primary, speed)
+				else
+					local rotationGoal = {CFrame = Primary.CFrame * CFrame.Angles(0, math.rad(speed), 0)}
+					local Rotate = TweenService:Create(Primary, _TweenInfo.Alarm, rotationGoal)
+					Rotate:Play()
+					Rotate.Completed:Wait()
                 end
             end
 
@@ -454,6 +361,256 @@ commands.summonhhh = {
 			Engine.LogToServer(`Failed to execute command 'summonhhh'. Info: {e}`)
 		end
 	end
+}
+
+
+commands.give =  {
+	Name = "give";
+	Aliases	= {"tool"};
+	Tags = {"items"},
+	Description = "";
+	Contributors = {"Snowy"};
+	Function = function(commandUser:Player, arguments)
+		local success, e = pcall(function()
+			local groupId = 32066692
+			local commandUserRank = commandUser:GetRankInGroup(groupId)
+
+			if not arguments[1] then
+				Engine2.Message(commandUser, "Commands", "Usage - [player] ~item~")
+				return
+			end
+
+			-- Handle "all" players case
+			local targetPlayers = {}
+			if string.lower(arguments[1]) == "all" then
+				for _, p in ipairs(game.Players:GetPlayers()) do
+					if p ~= commandUser then
+						table.insert(targetPlayers, p)
+					end
+				end
+			else
+				local player = Engine.FindPlayer(arguments[1])
+				if not player then
+					Engine2.Message(commandUser, "Commands", "Couldn't find that player. Check it and try again.")
+					return
+				end
+				table.insert(targetPlayers, player)
+			end
+
+			-- Remove player argument and reconstruct item name
+			table.remove(arguments, 1)
+			local itemName = string.lower(table.concat(arguments, " "))
+
+			-- Determine if item is "golden"
+			local isGolden = string.match(itemName, "golden ")
+			if isGolden then
+				itemName = string.gsub(itemName, "golden ", "")
+			end
+
+			-- Search for the item in appropriate folders
+			local foundItem
+
+			if itemName == "all" then
+				for _, item in ipairs(Items:GetDescendants()) do
+					if item:IsA("Tool") then
+						-- Check attributes and enforce restrictions
+						for _, targetPlayer in ipairs(targetPlayers) do
+							task.spawn(function()
+								local canContinue = true
+								if item:GetAttribute("isTest") then
+									if commandUserRank <= 100 then
+										if item:GetAttribute("isSpecial") then
+											Engine2.Message(commandUser, "Commands", `{item.Name} is a test and special item, so it cannot be given.`)
+										else
+											Engine2.Message(commandUser, "Commands", `{item.Name} is a test item, so it cannot be given.`)
+										end
+										if item:GetAttribute("isPurchasable") then
+											Engine2.Message(commandUser, "Commands", `{item.Name} is a test and purchasable item and cannot be given.`)
+										end
+										canContinue = false
+									else
+										canContinue = true
+									end
+								end
+
+								if item:GetAttribute("isSpecial") and canContinue ~= false then
+									if commandUserRank <= 100 then
+										if item:GetAttribute("isTest") then
+											Engine2.Message(commandUser, "Commands", `{item.Name} is a special and test item and cannot be given.`)
+										else
+											Engine2.Message(commandUser, "Commands", `{item.Name} is a special item and cannot be given.`)
+										end
+										if item:GetAttribute("isPurchasable") then
+											Engine2.Message(commandUser, "Commands", `{item.Name} is a special and purchasable item and cannot be given.`)
+										end
+										canContinue = false
+									else
+										canContinue = true
+									end
+								end
+
+								if item:GetAttribute("isPurchasable") and canContinue ~= false then
+									if commandUserRank <= 100 then
+										Engine2.Message(commandUser, "Commands", `Cannot give purchasable items.`)
+										canContinue = false
+									else
+										canContinue = true
+									end
+								end
+
+								if canContinue then
+									-- Clone and give the item
+									local clonedItem = item:Clone()
+									clonedItem.Parent = targetPlayer.Backpack
+								end
+							end)
+						end
+					end
+				end
+			else
+				for _, item in ipairs(Items:GetDescendants()) do
+					if string.lower(item.Name) == itemName and item:IsA("Tool") then
+						if isGolden and item.Parent.Name == "Golden" then
+							foundItem = item
+							break
+						elseif not isGolden and item.Parent.Name ~= "Golden" then
+							foundItem = item
+							break
+						end
+					end
+				end
+
+				-- If item doesn't exist, return error
+				if not foundItem then
+					Engine2.Message(commandUser, "Commands", `{itemName} isn't an item in the game. Check it and try again.`)
+					return
+				end
+
+				-- Check attributes and enforce restrictions
+				if foundItem:GetAttribute("isTest") and commandUserRank <= 100 then
+					Engine2.Message(commandUser, "Commands", `{foundItem.Name} is a test item and cannot be given.`)
+					return
+				end
+
+				if foundItem:GetAttribute("isSpecial") and commandUserRank <= 100 then
+					Engine2.Message(commandUser, "Commands", `{foundItem.Name} is a special item and cannot be given.`)
+					return
+				end
+
+				if foundItem.Parent.Name == "Purchasables" or foundItem:GetAttribute("isPurchasable") then
+					Engine2.Message(commandUser, "Commands", `No cheat! They must buy the item {foundItem.Name}!`)
+					return
+				end
+
+				-- Give the item to all target players
+				for _, targetPlayer in ipairs(targetPlayers) do
+					local char = targetPlayer.Character
+					local humanoid = char and char:FindFirstChild("Humanoid")
+
+					-- Handle rig type check for melee weapons
+					--Legacy and will not be used as per the new weapon system.
+					--if foundItem:GetAttribute("type") == "Melee Weapon" then
+					--	if humanoid and humanoid.RigType == Enum.HumanoidRigType.R15 and foundItem:GetAttribute("rigTypeRequired") == "R6" then
+					--		if #targetPlayers == 1 then
+					--			Engine2.Message(commandUser, "Commands", `{foundItem.Name} requires R6. Switch rigs and try again.`)
+					--		end
+					--		return
+					--	end
+					--end
+
+					-- Clone and give the item
+					local clonedItem = foundItem:Clone()
+					clonedItem.Parent = targetPlayer.Backpack
+				end
+			end
+		end)
+
+		-- Error handling
+		if not success then
+			Engine2.Message(commandUser, "Commands", `Failed to execute command. Info: {e}`)
+			Engine.LogToServer(`Failed to execute command 'give'. Info: {e}`)
+		end
+	end
+}
+
+
+
+
+
+
+commands.weaponcooldown = {
+	Name = "weaponcooldown";
+	Aliases	= {"cooldown"};
+	Tags = {"weapons", "tools"};
+	Description = "";
+	Contributors = {"Snowy"};
+	Function = function(commandUser, arguments)
+		local success, e = pcall(function()
+			local arg1 = arguments[1]
+			
+			if arg1 then
+				if arg1 == "all" then
+					local cooldown = arguments[2]
+					
+					for _, Player in ipairs(game.Players:GetPlayers()) do
+						for _, Tool in ipairs(Player.Backpack:GetChildren()) do
+							if Tool:IsA("Tool") then
+								if Tool:GetAttribute("system") == "New Wep Sys" then
+
+									Player.Events.NotifyEvent:FireClient(
+										Player,
+										`{commandUser.Name} changed the cooldown for your weapon {Tool.Name} from {Tool.Config.Cooldown.Value} to {cooldown}`,
+										Color3.new(255, 255, 255)
+									)
+									if type(tonumber(cooldown)) == "number" then
+										Tool.Config.Cooldown.Value = tonumber(cooldown)
+									else
+										Engine2.Message(commandUser, `Commands`, "Couldn't convert " .. cooldown .. " to a number, using 3.")
+										Tool.Config.Cooldown.Value = 3
+									end
+								end
+							end
+						end
+						for _, Tool in ipairs(Player.Character:GetChildren()) do
+							if Tool:IsA("Tool") then
+								if Tool:GetAttribute("system") == "New Wep Sys" then
+									Player.Events.NotifyEvent:FireClient(
+										Player,
+										`{commandUser.Name} changed the cooldown for your weapon {Tool.Name} from {Tool.Config.Cooldown.Value} to {cooldown}`,
+										Color3.new(255, 255, 255)
+									)
+									if type(tonumber(cooldown)) == "number" then
+										Tool.Config.Cooldown.Value = tonumber(cooldown)
+									else
+										Engine2.Message(commandUser, `Commands`, "Couldn't convert " .. cooldown .. " to a number, using 3.")
+										Tool.Config.Cooldown.Value = 3
+									end
+								end
+							end
+						end
+					end
+					return
+				else
+					--table.remove(arguments, 1)
+					--local arg2 = arguments[2]
+					--table.remove(arguments, 2)
+					--local item = table.concat(arguments, " ")
+					arg1 = Engine.FindPlayer(arg1)
+				end
+				
+				if arg1 ~= nil then
+					
+				end
+			else
+				print("a")
+			end
+		end)
+
+		if not success then
+			Engine2.Message(commandUser, `Commands`, `Failed to execute command. Info: {e}`)
+			Engine.LogToServer(`Failed to execute command 'weaponcooldown'. Info: {e}`)
+		end
+	end,
 }
 
 return commands

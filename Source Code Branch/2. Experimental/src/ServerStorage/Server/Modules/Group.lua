@@ -1,6 +1,10 @@
 local module = {}
 local GroupID = 32066692
 
+function module.GetRank_(player)
+	return player:GetRankInGroup(GroupID)
+end
+
 function module.GetRank(player, _type)
 	if player:IsInGroup(GroupID) then
 		local Rank = player:GetRankInGroup(GroupID)

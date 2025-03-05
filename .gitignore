@@ -8,4 +8,7 @@
 
 # Ignore Refernces. Ask me to send you the refernces.
 /! Ref/*
+
+# Private stuff.
 /%PRIVATE%/
+/alts.txt
