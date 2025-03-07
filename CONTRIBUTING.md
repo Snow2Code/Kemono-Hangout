@@ -10,16 +10,16 @@ Thank you for considering contributing to **Kemono Hangout**! Whether you're rep
    sh git clone https://github.com/Snow2Code/Kemono-Hangout.git
    cd Kemono-Hangout
    ```
-   
    Windows:
    ```
    git clone https://github.com/Snow2Code/Kemono-Hangout.git
    cd Kemono-Hangout
    ```
+   
 4. **Set Up the Environment – Follow the setup guide in README.md.**
-5. **Create a New Branch** –  
-   ```Linux: sh git checkout -b feature-name```
-   ```Windows: git checkout -b feature-name```
+5. **Create a New Branch**
+   Linux: ``` sh git checkout -b feature-name```
+   Windows: ```git checkout -b feature-name```
 6. **Make Changes & Commit – Keep commits small and descriptive.**
 7. **Submit a Pull Request (PR) – Open a PR and describe your changes.**
 
