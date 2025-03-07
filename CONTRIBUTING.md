@@ -17,7 +17,7 @@ Thank you for considering contributing to **Kemono Hangout**! Whether you're rep
    ```
    
 4. **Set Up the Environment – Follow the setup guide in README.md.**
-5. **Create a New Branch**
+5. **Create a New Branch** <br>
    Linux: ``` sh git checkout -b feature-name```
    Windows: ```git checkout -b feature-name```
 6. **Make Changes & Commit – Keep commits small and descriptive.**
