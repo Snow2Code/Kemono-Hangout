@@ -7,7 +7,7 @@ Welcome to the official GitHub repository for **Kemono Hangout**! This is where 
 Kemono Hangout is a Roblox furry hangout game designed for fun, relaxation, and social interaction. This game is built with **Rojo** and hosted on Roblox.
 
 ### 🌟 Features:
-- Social spaces like a **Café**, **Park**, and **Apartment Rooms**.
+- Social spaces like a **Café**, **Park**, and **Hotel** (The hotel is being remodeled, based on a Hotel I went to in Spain)
 - Nexus VR support for immersive gameplay.
 - Kemono avatars (by **Ollie - Protogen1929**. Some others by **Snowy - fuzzy_james/Snow2Code**) and other community contributions.
 
@@ -44,6 +44,11 @@ Please use **GitHub Issues** to report problems, suggest features, or request en
 | `feature request` | Suggesting a new feature |
 | `help wanted` | Open for community contributions |
 | `question` | Asking for clarification |
+| `optimization` | Performance improvements |
+| `gameplay` | Issues or suggestions related to mechanics |
+| `UI/UX` | Interface or experience-related feedback |
+| `audio` | Sound or music-related issues |
+| `VR` | Issues related to VR support |
 
 ---
 ## 🛠 Contributing
@@ -73,6 +78,8 @@ See [LICENSE.md](LICENSE.md) for full details.
 ---
 ## 📞 Contact
 - Builder & Coder: **Snowy (@fuzzy_james)**
-- Community Contributions: **Ollie (Protogen1929)**
+- Community Contributions:
+  **Ollie (Protogen1929)**
+  **Eri (Vandalca)** - Upcoming Rank System (like TBH: Furry Fandom Hangout Rep System)
 
 Have fun in **Kemono Hangout**! 🐾✨
