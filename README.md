@@ -9,7 +9,7 @@ Kemono Hangout is a Roblox furry hangout game designed for fun, relaxation, and 
 ### 🌟 Features:
 - Social spaces like a **Café**, **Park**, and **Apartment Rooms**.
 - Nexus VR support for immersive gameplay.
-- Kemono avatars (by **Ollie - Protogen1929**) and other community contributions.
+- Kemono avatars (by **Ollie - Protogen1929**. Some others by **Snowy - fuzzy_james/Snow2Code**) and other community contributions.
 
 ---
 ## 🚀 Getting Started
@@ -21,8 +21,8 @@ To set up this project locally, you will need:
 
 ### 📥 Cloning the Repository
 ```sh
-git clone https://github.com/YOUR-USERNAME/KemonoHangout.git
-cd KemonoHangout
+git clone https://github.com/Snow2Code/Kemono-Hangout.git
+cd Kemono-Hangout
 ```
 
 ### 🔄 Syncing with Roblox Studio
