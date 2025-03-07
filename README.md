@@ -79,7 +79,7 @@ See [LICENSE.md](LICENSE.md) for full details.
 ## 📞 Contact
 - Builder & Coder: **Snowy (@fuzzy_james)**
 - Community Contributions:
-  **Ollie (Protogen1929)**
-  **Eri (Vandalca)** - Upcoming Rank System (like TBH: Furry Fandom Hangout Rep System)
+ - **Ollie (Protogen1929)**
+ - **Eri (Vandalca)** - Upcoming Rank System (like TBH: Furry Fandom Hangout Rep System)
 
 Have fun in **Kemono Hangout**! 🐾✨
