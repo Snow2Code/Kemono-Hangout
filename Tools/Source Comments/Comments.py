@@ -41,7 +41,7 @@ output(f"""
 💚🐱 {termcolor.colored("Created by Snowy - https://github.com/Snow2Code", "light_green")} 🐱💚
 
 🖇️ {termcolor.colored("Links", "light_magenta")} 🖇️:
-{termcolor.colored("Source Code Comments Tool Github Repo - https://github.com/Snow2Code/Kemono-Hangout/tree/main/src/tools/comments", "light_green")}
+{termcolor.colored("Source Code Comments Tool Github Repo - https://github.com/Snow2Code/Kemono-Hangout/tree/main/Tools/Source Comments", "light_green")}
 {termcolor.colored("Kemono Hangout Github Repo - https://github.com/Snow2Code/Kemono-Hangout", "light_green")}
 
 """)
