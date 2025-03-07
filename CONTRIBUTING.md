@@ -9,7 +9,8 @@ Thank you for considering contributing to **Kemono Hangout**! Whether you're rep
    ```
    sh git clone https://github.com/Snow2Code/Kemono-Hangout.git
    cd Kemono-Hangout
-   ```\n
+   ```
+   
    Windows:
    ```
    git clone https://github.com/Snow2Code/Kemono-Hangout.git
