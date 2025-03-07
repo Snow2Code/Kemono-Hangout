@@ -7,4 +7,15 @@ Thank you for considering contributing to **Kemono Hangout**! Whether you're rep
 2. **Clone the Repository** –  
    ```sh
    git clone https://github.com/Snow2Code/Kemono-Hangout.git
-   cd Kemono-Hangout
+   cd Kemono-Hangout```
+3. **Set Up the Environment – Follow the setup guide in README.md.**
+4. **Create a New Branch** –  
+   ```Linux: sh git checkout -b feature-name```
+   ```Windows: git checkout -b feature-name```
+5. **Make Changes & Commit – Keep commits small and descriptive.**
+6. **Submit a Pull Request (PR) – Open a PR and describe your changes.**
+
+## 📢 Reporting Issues
+- Use GitHub Issues to report bugs or suggest features.
+- Check if your issue already exists before creating a new one.
+- Use appropriate labels (bug, feature request, etc.).
