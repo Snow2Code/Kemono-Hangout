@@ -5,15 +5,22 @@ Thank you for considering contributing to **Kemono Hangout**! Whether you're rep
 ## 📌 How to Contribute
 1. **Fork the Repository** – Click the "Fork" button on GitHub.
 2. **Clone the Repository** –  
-   ```sh
+   Linux:
+   ```
+   sh git clone https://github.com/Snow2Code/Kemono-Hangout.git
+   cd Kemono-Hangout
+   ```\n
+   Windows:
+   ```
    git clone https://github.com/Snow2Code/Kemono-Hangout.git
-   cd Kemono-Hangout```
-3. **Set Up the Environment – Follow the setup guide in README.md.**
-4. **Create a New Branch** –  
+   cd Kemono-Hangout
+   ```
+4. **Set Up the Environment – Follow the setup guide in README.md.**
+5. **Create a New Branch** –  
    ```Linux: sh git checkout -b feature-name```
    ```Windows: git checkout -b feature-name```
-5. **Make Changes & Commit – Keep commits small and descriptive.**
-6. **Submit a Pull Request (PR) – Open a PR and describe your changes.**
+6. **Make Changes & Commit – Keep commits small and descriptive.**
+7. **Submit a Pull Request (PR) – Open a PR and describe your changes.**
 
 ## 📢 Reporting Issues
 - Use GitHub Issues to report bugs or suggest features.
