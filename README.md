@@ -72,7 +72,7 @@ See [LICENSE.md](LICENSE.md) for full details.
 ## 🎮 Game Versions
 | Version | Notes |
 |---------|-------|
-| `Main - v2.4.3` | Stable release |
+| `Main - v2.4.3` | Stable/public release |
 | `Experimental - v2.5` | Testing new features |
 
 ---
@@ -81,5 +81,7 @@ See [LICENSE.md](LICENSE.md) for full details.
 - Community Contributions:
  - **Ollie (Protogen1929)**
  - **Eri (Vandalca)** - Upcoming Rank System (like TBH: Furry Fandom Hangout Rep System)
+
+Optionally - You can just email Snowy at ```lynsnowie@outlook.com``` or ```Snow2Code@protonmail.com``` for 
 
 Have fun in **Kemono Hangout**! 🐾✨
